@@ -10,5 +10,13 @@
   Please log in to continue:
 </div>
 
+<div id='form' class='text-center'>
+  <form method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class='btn btn-default' type='sumbit' value='Log In'/>
+  </form>
+</div>
+
 
 {% endblock %}
