@@ -23,3 +23,6 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
+
+def user_profile(request):
+    return render(request, 'user_profile.html')
