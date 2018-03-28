@@ -1,12 +1,11 @@
-from django.db import models
-from django.forms import ModelForm
 from django import forms
-from .models import User
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
-class UserLogInForm(ModelForm):
+
+class SignUpForm(UserCreationForm):
+    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
+
     class Meta:
         model = User
-        fields=('email', 'password')
-    email = forms.CharField(max_length = 50)
-    password = forms.CharField(max_length = 10)
-    
+        fields = ('email', 'password1', 'password2', )
