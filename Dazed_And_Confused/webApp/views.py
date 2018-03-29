@@ -26,3 +26,6 @@ def signup(request):
 
 def user_profile(request):
     return render(request, 'user_profile.html')
+
+def about_page(request):
+    return render(request, 'AboutUs.html')
