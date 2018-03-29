@@ -3,8 +3,16 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
+
+<style>
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
   <h2 class='text-center'>Welcome to the Dazed and Confused Login Page!</h2></br>
-  <img src="static/cover_page.jpg">
+  <img src="http://akns-images.eonline.com/eol_images/Entire_Site/2015102/rs_1024x759-151102132605-rs_1024x759-130417122053-1024.DazedConfused.mh.041713.jpg" height="400" width="400" class="center">
   <h3 class='text-center'>Please enter your email adress and password to continue:</h3>
   <form class='text-center' method="post">
     {% csrf_token %}
