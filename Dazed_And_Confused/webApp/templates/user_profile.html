@@ -1,12 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<style>
-  input[type="radio"]{
-  margin: 0 5px 0 5px;
-  }
-</style>
-
+<div class="jumbotron text-center">
 <h1 class='text-center'>Welcome {{ user.username|capfirst }} to Dazed and Confused!</h1>
 
 <h2 class='text-center'>Please search for a product to continue:</h2>
@@ -17,5 +12,6 @@
   <input type="radio" id="eBay">eBay
   <input type="radio" id="Newegg">Newegg
 
+</div>
 </div>
 {%endblock%}
