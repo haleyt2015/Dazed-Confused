@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from .forms import UserCreationForm
+from .forms import SignUpForm
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
 
@@ -12,7 +12,7 @@ def settings(request):
 
 def signup(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
@@ -21,7 +21,7 @@ def signup(request):
             login(request, user)
             return render(request, 'signup.html', {'form': form})
     else:
-        form = UserCreationForm()
+        form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
 
 def user_profile(request):
