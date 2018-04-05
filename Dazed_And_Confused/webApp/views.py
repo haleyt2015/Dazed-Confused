@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from .forms import SignUpForm
+from .forms import SearchForm
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
 from semantics3 import Products
@@ -26,16 +27,17 @@ def signup(request):
     return render(request, 'signup.html', {'form': form})
 
 def user_profile(request):
+    form = SearchForm(request.POST)
     sem3 = Products(
-		api_key = "SEM3CCB4BBBB383C73986C4B27B9BE4B3088",
-		api_secret = "YmJjY2M1YzFlMGM0ZTg1OTdlNDFkYmY5MmRmZTg2ZDk"
+        api_key = "SEM3CCB4BBBB383C73986C4B27B9BE4B3088",
+        api_secret = "YmJjY2M1YzFlMGM0ZTg1OTdlNDFkYmY5MmRmZTg2ZDk"
 	)
 
-	sem3.products_field("search", "iphone")
+    sem3.products_field("search", form.fields['search'])
 
-	results = sem3.get()
-		
-	return render(request, 'user_profile.html', results)
+    results = sem3.get()
+
+    return render(request, 'user_profile.html', results, {'form': form})
 
 def about_page(request):
     return render(request, 'AboutUs.html')
