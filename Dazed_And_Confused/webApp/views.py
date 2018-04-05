@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from .forms import SignUpForm
 from .forms import SearchForm
 from django.contrib.auth import authenticate
+from django.contrib.auth.models import User
 from django.contrib.auth import login
 from semantics3 import Products
 
@@ -28,7 +29,7 @@ def signup(request):
 
 def user_profile(request):
     if request.method == 'POST':
-        form = SearchForm(request.POST)
+        form = SearchForm(request.POST, instance=User)
         if form.is_valid():
             search = request.POST.get('search', "")
             sem3 = Products(
