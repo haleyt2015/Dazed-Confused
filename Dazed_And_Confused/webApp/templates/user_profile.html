@@ -6,12 +6,12 @@
 
 <h2 class='text-center'>Please search for a product to continue:</h2>
 
-<div id='form'>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input class="btn btn-default" type="submit" value="Search"/>
-  </form>
+<div style="width:550px; margin:20 auto;">
+  <input type="search"  id="mySearch" name="q"><button class="btn btn-primary" style="margin-top:5px;">Search</button></br>
+  <input type="radio" id="Amazon">Amazon
+  <input type="radio" id="eBay">eBay
+  <input type="radio" id="Newegg">Newegg
+
 </div>
 <body>
 {{results}}
