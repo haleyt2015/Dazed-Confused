@@ -16,4 +16,5 @@ class SearchForm(ModelForm):
     search = forms.CharField(max_length=50)
 
     class Meta:
-        fields = ('search')
+        model = User
+        fields = ('search',)
