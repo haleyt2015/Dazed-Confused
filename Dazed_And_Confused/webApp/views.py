@@ -32,15 +32,15 @@ def user_profile(request):
         if form.is_valid():
             search = form.cleaned_data.get('search')
             sem3 = Products(
-            api_key = "SEM3CCB4BBBB383C73986C4B27B9BE4B3088",
-            api_secret = "YmJjY2M1YzFlMGM0ZTg1OTdlNDFkYmY5MmRmZTg2ZDk"
-	           )
+                api_key = "SEM3CCB4BBBB383C73986C4B27B9BE4B3088",
+                api_secret = "YmJjY2M1YzFlMGM0ZTg1OTdlNDFkYmY5MmRmZTg2ZDk"
+            )
 
-               sem3.products_field("search", search)
+            sem3.products_field("search", search)
 
-               results = sem3.get()
+            results = sem3.get()
 
-               return render(request, 'user_profile.html', results, {'form': form})
+            return render(request, 'user_profile.html', results, {'form': form})
 
 def about_page(request):
     return render(request, 'AboutUs.html')
