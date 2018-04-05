@@ -25,13 +25,14 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
 
-def user_profile(request):
+def user_profile(request): 
+    search = "iphone"
     sem3 = Products(
         api_key = "SEM3CCB4BBBB383C73986C4B27B9BE4B3088",
         api_secret = "YmJjY2M1YzFlMGM0ZTg1OTdlNDFkYmY5MmRmZTg2ZDk"
 	)
 
-    sem3.products_field("search", "iphone")
+    sem3.products_field("search", search)
 
     results = sem3.get()
 
@@ -39,3 +40,6 @@ def user_profile(request):
 
 def about_page(request):
     return render(request, 'AboutUs.html')
+
+def ahh(request):
+    return render(request, 'ahh.html')
