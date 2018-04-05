@@ -20,7 +20,7 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('/')
+            return redirect('http://127.0.0.1:8000/ahh')
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
@@ -43,3 +43,4 @@ def about_page(request):
 
 def ahh(request):
     return render(request, 'ahh.html')
+
