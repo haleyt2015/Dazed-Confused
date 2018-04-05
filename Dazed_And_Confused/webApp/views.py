@@ -42,6 +42,9 @@ def user_profile(request):
 
         form = SearchForm()
         return render(request, 'user_profile.html', {'form': form , 'results': results})
+    else:
+        return render(request, 'signup.html', {'form': form})
+
     # if request.method == 'POST':
     #     form = SearchForm(request.POST)
     #     if form.is_valid():
