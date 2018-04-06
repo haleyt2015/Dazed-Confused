@@ -2,6 +2,8 @@ from datetime import date
 from datetime import datetime
 from django.db import models
 
-class Person(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
+class SearchInput(models.Model):
+	input = models.CharField(max_length=250)
+
+	class Meta:
+		managed = True
