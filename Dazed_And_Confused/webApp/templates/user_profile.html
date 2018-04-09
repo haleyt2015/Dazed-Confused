@@ -8,19 +8,20 @@
 
 <div style="width:550px; margin:20 auto;">
   <form class='text-center' method="post">
-	<input type="text" name="input"><br>
+	<input class='text-center' type="text" name="input"><br>
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary" style="margin-top:5px;">Search</button>
   </form>
-  <input type="radio" id="Amazon">Amazon
-  <input type="radio" id="eBay">eBay
-  <input type="radio" id="Newegg">Newegg
 
 </div>
 <body>
-{{results}}
-
+{%for item in results%}
+<p>{{item.name}}  {{item.price}}</p>
+{%for site in item.sitedetails%}
+<a href ="{{site.url}}">{{site.url}}</a><br/>
+{% endfor %}
+{% endfor %}
 </body>
 </div>
 {%endblock%}
