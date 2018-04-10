@@ -8,7 +8,9 @@
 </style>
 
 <div class="jumbotron text-center">
-<h1>Welcome {{ user.username|capfirst }} to Dazed and Confused!</h1>
+  <h1>Welcome {{ user.username|capfirst }} to Dazed and Confused!</h1>
+</div>
+
 
 <h2 class='text-center'>Please search for a product to continue:</h2>
 
@@ -29,5 +31,4 @@
 {% endfor %}
 {% endfor %}
 </body>
-</div>
 {%endblock%}
