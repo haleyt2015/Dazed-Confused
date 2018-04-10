@@ -5,6 +5,9 @@
     background: linear-gradient(to right, #3BCDE3, #3BCDE3);
 
   }
+  body{
+    background: #E7FBFB;
+  }
 </style>
 
 <div class="jumbotron text-center">
@@ -23,12 +26,12 @@
   </form>
 
 </div>
-<body>
-{%for item in results%}
-<p>{{item.name}}  {{item.price}}</p>
-{%for site in item.sitedetails%}
-<a href ="{{site.url}}">{{site.url}}</a><br/>
-{% endfor %}
-{% endfor %}
-</body>
+<div class="text-center">
+  {%for item in results%}
+  <p>{{item.name}}  {{item.price}}</p>
+  {%for site in item.sitedetails%}
+  <a href ="{{site.url}}">{{site.url}}</a><br/>
+  {% endfor %}
+  {% endfor %}
+</div>
 {%endblock%}
