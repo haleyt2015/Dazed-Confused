@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
+<style>
+  .jumbotron{
+    background: linear-gradient(to right, #3BCDE3, #3BCDE3);
+
+  }
+</style>
+
 <div class="jumbotron text-center">
-<h1 class='text-center'>Welcome {{ user.username|capfirst }} to Dazed and Confused!</h1>
+<h1>Welcome {{ user.username|capfirst }} to Dazed and Confused!</h1>
 
 <h2 class='text-center'>Please search for a product to continue:</h2>
 
